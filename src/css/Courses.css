@@ -1,5 +1,8 @@
 .Courses {
   width: 30vw;
   height: 100vh;
-  background-color: red;
+  background-color: #F8BBD0;
+}
+.course-name {
+  margin-right: 5px;
 }

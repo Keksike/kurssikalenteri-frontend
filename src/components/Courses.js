@@ -26,7 +26,8 @@ class Courses extends Component {
 
   renderCourseListItem = (course) => {
     return (<li>
-      { course.name }
+      <span className="course-name">{ course.name }</span>
+      <span className="course-credits">{ course.credits }</span>
     </li>)
   }
 
