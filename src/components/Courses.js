@@ -24,12 +24,11 @@ var testCourses = [
 ]
 
 class Courses extends Component {
-
   render() {
     return (
       <div className="Courses">
         <ul>
-          { testCourses.map((course) => <CourseListItem course={course}/>) }
+          { testCourses.map((course) => <CourseListItem key={course.code} course={course} />) }
         </ul>
       </div>
     );
