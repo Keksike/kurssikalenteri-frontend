@@ -3,11 +3,14 @@ import '../css/CourseListItem.css';
 
 class CourseListItem extends Component {
     
-
-
     render() {
         return (
-            <li>moro moro</li>
+        <li key={course.code}>
+            <button onClick={() => console.log("stringi vaan sinne")}>
+              <span className="course-name">{ course.name }</span>
+              <span className="course-credits">{ course.credits }</span>
+            </button>
+        </li>
         );
     }
 }

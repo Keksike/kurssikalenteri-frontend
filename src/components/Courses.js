@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Courses.css';
+import CourseListItem from './CourseListItem';
 
 var testCourses = [
   {
@@ -24,18 +25,11 @@ var testCourses = [
 
 class Courses extends Component {
 
-  renderCourseListItem = (course) => {
-    return (<li>
-      <span className="course-name">{ course.name }</span>
-      <span className="course-credits">{ course.credits }</span>
-    </li>)
-  }
-
   render() {
     return (
       <div className="Courses">
         <ul>
-          { testCourses.map((course) => this.renderCourseListItem(course)) }
+          { testCourses.map((course) => <CourseListItem course={course}/>) }
         </ul>
       </div>
     );
