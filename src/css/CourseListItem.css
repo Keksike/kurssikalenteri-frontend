@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+button {
+    width: 100%;
+    background-color: #eeeeee;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #fb8c00;
+}
+button:active {
+    transform: translateY(4px);
+}
