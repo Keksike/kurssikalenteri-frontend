@@ -1,0 +1,17 @@
+.Calendar {
+  display: inline-block;
+  background-color: white;
+  vertical-align: top;
+  width: 75vw;
+  max-width: 75vw;
+  height: 100vh;
+}
+
+.rbc-calendar {
+  padding: 15px;
+}
+
+.rbc-toolbar {
+  overflow: scroll;
+}
+

@@ -1,8 +1,9 @@
 .Courses {
+  display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 30vw;
+  width: 25vw;
   height: 100vh;
   background-color: #ffc947;
 }
