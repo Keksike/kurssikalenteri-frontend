@@ -1,4 +1,7 @@
 .Courses {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   width: 30vw;
   height: 100vh;
   background-color: #ffc947;
