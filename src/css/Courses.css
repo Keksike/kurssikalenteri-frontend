@@ -10,3 +10,9 @@
 .course-name {
   margin-right: 5px;
 }
+
+.course-input {
+  width: 90%;
+  font-size: 20px;
+  margin: 5px;
+}

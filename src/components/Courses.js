@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import cheerio from 'cheerio';
+
 import '../css/Courses.css';
 import CourseListItem from './CourseListItem';
 
@@ -24,12 +26,61 @@ var testCourses = [
 ]
 
 class Courses extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      courseInputValue: '',
+      courseHtml: null
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+  handleChange(event) {
+    this.setState({courseInputValue: event.target.value});
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(this.state.courseInputValue);
+      const htmlData = await response.text();
+
+      const $ = cheerio.load(htmlData)
+
+      console.log($('.ope_email').text().trim())
+
+      this.setState({
+        courseHtml: htmlData
+      });
+
+    } catch(error) {
+      console.log(error);
+    }
+
+    this.setState({courseInputValue: ''})
+  }
+
   render() {
+
     return (
       <div className="Courses">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            value={this.state.courseInputValue}
+            onChange={this.handleChange}
+            className="course-input"
+            type="text"
+            placeholder="Linkki kurssiin..."
+          />
+        </form>
         <ul>
           { testCourses.map((course) => <CourseListItem key={course.code} course={course} />) }
         </ul>
+        <p>{this.state.courseHtml}</p>
       </div>
     );
   }
