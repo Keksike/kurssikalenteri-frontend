@@ -15,3 +15,16 @@
   overflow: scroll;
 }
 
+.rbc-btn-group button {
+  max-width: 100px;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  flex-grow: 0;
+  flex: 1;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child {
+  justify-self: flex-end;
+  flex: 1;
+}
