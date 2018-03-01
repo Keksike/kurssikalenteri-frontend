@@ -2,16 +2,32 @@ import React, { Component } from 'react';
 import '../css/CourseListItem.css';
 
 class CourseListItem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isSelected: false
+    };
+  }
+
+  toggleIsSelected = () => {
+    this.setState({ isSelected: !this.state.isSelected });
+  }
+
   render() {
+    const { isSelected } = this.state;
+    const { course } = this.props;
+
     return (
-      <ul>
-        <li>
-          <button onClick={() => console.log("stringi vaan sinne")}>
-            <span className="course-name">{ this.props.course.name }</span>
-            <span className="course-credits">{ this.props.course.credits }</span>
-          </button>
-        </li>
-      </ul>
+      <li>
+        <button
+          onClick={this.toggleIsSelected}
+          className={isSelected ? 'isSelected' : ''}
+        >
+          <span className="course-name">{ course.name }</span>
+          <span className="course-credits">{ course.credits }</span>
+        </button>
+      </li>
     );
   }
 }
